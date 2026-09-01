@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Ping Supabase
         run: |
-          curl -X POST "${{ https://rfxoxogbucfqqynslszw.supabase.co }}/rest/v1/heartbeat" \
-            -H "apikey: ${{ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJmeG94b2didWNmcXF5bnNsc3p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2NzU0NDcsImV4cCI6MjA5MDI1MTQ0N30.xfCa6oq2ZYfcqW-8A9wSw-7nfOCeofaulfZmb1rPJcE }}" \
-            -H "Authorization: Bearer ${{ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJmeG94b2didWNmcXF5bnNsc3p3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ2NzU0NDcsImV4cCI6MjA5MDI1MTQ0N30.xfCa6oq2ZYfcqW-8A9wSw-7nfOCeofaulfZmb1rPJcE }}" \
+          curl -X POST "${{ secrets.SUPABASE_URL }}/rest/v1/heartbeat" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
             -H "Content-Type: application/json" \
             -d '{}'
